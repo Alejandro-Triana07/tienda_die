@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Tienda Virtual</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <img src="https://via.placeholder.com/40x40/2c3e50/ffffff?text=TV" alt="Logo">
+                <span>Mi Tienda Virtual</span>
+            </div>
+            <div class="user-info">
+                <span id="welcomeMessage" class="hidden"></span>
+                <button id="cartToggle" class="btn btn-cart hidden">
+                    <span>🛒</span>
+                    <span id="cartCount">0</span>
+                </button>
+                <button id="logoutBtn" class="btn btn-secondary hidden">Cerrar Sesión</button>
+            </div>
+        </header>
+
+        <!-- Formularios de autenticación -->
+        <div id="authSection">
+            <div id="loginForm" class="auth-container">
+                <h2>Iniciar Sesión</h2>
+                <div class="form-group">
+                    <label for="loginEmail">Email:</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Contraseña:</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <button id="loginBtn" class="btn btn-primary">Iniciar Sesión</button>
+                <button id="showRegisterBtn" class="btn btn-secondary">¿No tienes cuenta? Registrarse</button>
+                <div id="loginError" class="error"></div>
+            </div>
+
+            <div id="registerForm" class="auth-container hidden">
+                <h2>Registrarse</h2>
+                <div class="form-group">
+                    <label for="registerName">Nombre:</label>
+                    <input type="text" id="registerName" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail">Email:</label>
+                    <input type="email" id="registerEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Contraseña:</label>
+                    <input type="password" id="registerPassword" required>
+                </div>
+                <button id="registerBtn" class="btn btn-primary">Registrarse</button>
+                <button id="showLoginBtn" class="btn btn-secondary">¿Ya tienes cuenta? Iniciar Sesión</button>
+                <div id="registerError" class="error"></div>
+                <div id="registerSuccess" class="success"></div>
+            </div>
+        </div>
+
+        <!-- Panel de administración -->
+        <div id="adminPanel" class="admin-panel hidden">
+            <h3 class="admin-title">Panel de Administración - Gestionar Productos</h3>
+            <div class="admin-form">
+                <div class="form-group">
+                    <label for="productName">Nombre del Producto:</label>
+                    <input type="text" id="productName" required>
+                </div>
+                <div class="form-group">
+                    <label for="productDescription">Descripción:</label>
+                    <input type="text" id="productDescription" required>
+                </div>
+                <div class="form-group">
+                    <label for="productPrice">Precio (COP):</label>
+                    <input type="number" id="productPrice" step="1000" required>
+                </div>
+                <div class="form-group">
+                    <label for="productImage">URL de la Imagen:</label>
+                    <input type="url" id="productImage" placeholder="https://ejemplo.com/imagen.jpg">
+                </div>
+                <button id="addProductBtn" class="btn btn-primary">Agregar Producto</button>
+                <div id="productSuccess" class="success"></div>
+            </div>
+        </div>
+
+        <!-- Navegación -->
+        <nav id="mainNav" class="main-nav hidden">
+            <button id="showProducts" class="nav-btn active">Productos</button>
+            <button id="showCart" class="nav-btn">Carrito</button>
+        </nav>
+
+        <!-- Sección de productos -->
+        <div id="storeSection" class="hidden">
+            <div class="products-grid" id="productsGrid"></div>
+        </div>
+
+        <!-- Sección del carrito -->
+        <div id="cartSection" class="hidden">
+            <div class="cart-container">
+                <h2>Mi Carrito de Compras</h2>
+                <div id="cartItems" class="cart-items"></div>
+                <div class="cart-summary">
+                    <div class="cart-total">
+                        Total: <span id="cartTotal">$0</span>
+                    </div>
+                    <button id="checkoutBtn" class="btn btn-primary">Finalizar Compra</button>
+                    <button id="clearCartBtn" class="btn btn-secondary">Vaciar Carrito</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
